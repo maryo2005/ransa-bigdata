@@ -1,3 +1,37 @@
+# Big Data y Analítica para la optimización de rutas logísticas
+
+## Empresa de aplicación
+
+Ransa Comercial S.A.
+
+## Objetivo
+
+Integrar y analizar fuentes oficiales relacionadas con infraestructura vial, emergencias, accidentes y flujo vehicular para identificar condiciones de riesgo en la Red Vial Nacional y apoyar la planificación logística.
+
+## Arquitectura
+
+Ruta de despliegue: On-premise.
+
+Tecnologías previstas:
+
+- Debian 12
+- Hadoop / HDFS
+- YARN
+- Apache Spark
+- PySpark
+- JupyterLab
+- Apache Parquet
+- Git / GitHub
+
+## Integrantes
+
+- Kiara Aguilar Chacón
+- Álvaro Arroyo Terán
+- Maryory Valencia Galarreta
+- Lorena Vásquez Carrillo
+
+---
+
 ## Estado actual del proyecto
 
 Actualmente se ha implementado y verificado la infraestructura base del proyecto en un entorno on-premise compuesto por dos máquinas virtuales con Debian 12:
@@ -10,14 +44,16 @@ Ambos nodos se encuentran conectados mediante una red virtual privada, permitien
 ### Configuración actual del clúster
 
 #### Nodo Master
+
 - Hostname: `ransa-master`
 - Rol: nodo principal
 - Servicios principales:
   - HDFS NameNode
   - YARN ResourceManager
-  - Ejecución y coordinación de trabajos Spark
+  - Coordinación de trabajos Spark
 
 #### Nodo Worker
+
 - Hostname: `ransa-worker1`
 - Rol: nodo trabajador
 - Servicios principales:
@@ -25,7 +61,7 @@ Ambos nodos se encuentran conectados mediante una red virtual privada, permitien
   - YARN NodeManager
   - Ejecución distribuida de tareas Spark
 
-En el nodo trabajador se configuraron los siguientes componentes:
+En el nodo worker se configuraron los siguientes componentes:
 
 - Debian 12
 - OpenJDK 17
@@ -33,15 +69,17 @@ En el nodo trabajador se configuraron los siguientes componentes:
 - SSH Server
 - Git
 - Python 3
-- PySpark
-- Tailscale para la comunicación remota entre nodos
+- Tailscale
+
+---
 
 ## Comunicación entre nodos
 
-Los nodos se encuentran conectados mediante Tailscale, permitiendo establecer comunicación entre las máquinas virtuales aunque se encuentren en redes físicas diferentes.
+Los nodos `ransa-master` y `ransa-worker1` se encuentran conectados mediante Tailscale.
 
-La resolución de nombres utilizada es:
+Esto permite la comunicación entre ambas máquinas virtuales aunque se encuentren en redes físicas diferentes.
 
-```text
-ransa-master
-ransa-worker1
+Para verificar la comunicación desde el nodo master hacia el worker:
+
+```bash
+ping -c 4 ransa-worker1

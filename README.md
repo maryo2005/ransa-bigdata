@@ -1,27 +1,47 @@
-# Big Data y Analítica para la optimización de rutas logísticas
+## Estado actual del proyecto
 
-## Empresa de aplicación
-Ransa Comercial S.A.
+Actualmente se ha implementado y verificado la infraestructura base del proyecto en un entorno on-premise compuesto por dos máquinas virtuales con Debian 12:
 
-## Objetivo
-Integrar y analizar fuentes oficiales relacionadas con infraestructura vial, emergencias, accidentes y flujo vehicular para identificar condiciones de riesgo en la Red Vial Nacional y apoyar la planificación logística.
+- `ransa-master`
+- `ransa-worker1`
 
-## Arquitectura
-Ruta de despliegue: On-premise.
+Ambos nodos se encuentran conectados mediante una red virtual privada, permitiendo la comunicación remota entre las máquinas.
 
-Tecnologías previstas:
+### Configuración actual del clúster
+
+#### Nodo Master
+- Hostname: `ransa-master`
+- Rol: nodo principal
+- Servicios principales:
+  - HDFS NameNode
+  - YARN ResourceManager
+  - Ejecución y coordinación de trabajos Spark
+
+#### Nodo Worker
+- Hostname: `ransa-worker1`
+- Rol: nodo trabajador
+- Servicios principales:
+  - HDFS DataNode
+  - YARN NodeManager
+  - Ejecución distribuida de tareas Spark
+
+En el nodo trabajador se configuraron los siguientes componentes:
 
 - Debian 12
-- Hadoop / HDFS
-- YARN
-- Apache Spark
+- OpenJDK 17
+- Hadoop 3.3.6
+- SSH Server
+- Git
+- Python 3
 - PySpark
-- JupyterLab
-- Apache Parquet
-- Git / GitHub
+- Tailscale para la comunicación remota entre nodos
 
-## Integrantes
-- Kiara Aguilar Chacón
-- Álvaro Arroyo Terán
-- Maryory Valencia Galarreta
-- Lorena Vásquez Carrillo
+## Comunicación entre nodos
+
+Los nodos se encuentran conectados mediante Tailscale, permitiendo establecer comunicación entre las máquinas virtuales aunque se encuentren en redes físicas diferentes.
+
+La resolución de nombres utilizada es:
+
+```text
+ransa-master
+ransa-worker1

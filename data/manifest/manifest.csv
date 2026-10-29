@@ -1,0 +1,8 @@
+dataset,entidad,periodo,registros,tamano_bytes,tamano_mib,formato,gcs_path,estado
+emergencias,MTC,2026,1362,926716,0.88,CSV,gs://ransa-big-data-2026-lake/bronze/emergencias/,BRONZE
+red_vial,MTC,2022-2025,34761,12565848,11.98,CSV,gs://ransa-big-data-2026-lake/bronze/red_vial/,BRONZE
+red_vial_geo,MTC-IDEP,2024,7058,42468893,40.50,ZIP-SHP,gs://ransa-big-data-2026-lake/bronze/red_vial_geo/,BRONZE
+accidentes,OSITRAN,2019-2026,41833,11584529,11.05,CSV,gs://ransa-big-data-2026-lake/bronze/accidentes/,BRONZE
+flujo_peajes,MTC,2014-2026,11532,1618626,1.54,CSV,gs://ransa-big-data-2026-lake/bronze/flujo_peajes/,BRONZE
+transporte_carga_2022_2024,MTC,2022-2024,1020854,201079874,191.76,CSV,gs://ransa-big-data-2026-lake/bronze/transporte_carga/,BRONZE
+transporte_carga_2025,MTC,2025,373240,75846110,72.33,CSV,gs://ransa-big-data-2026-lake/bronze/transporte_carga/,BRONZE

@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Credenciales
+.env
+.env.*
+*.pem
+*.key
+
+# Datos pesados
+*.parquet
+*.zip
+*.tar
+*.tar.gz
+
+# Spark
+spark-warehouse/
+metastore_db/
+derby.log
+
+# Sistema
+.DS_Store
+Thumbs.db

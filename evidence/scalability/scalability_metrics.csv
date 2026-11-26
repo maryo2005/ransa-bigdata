@@ -1,0 +1,4 @@
+escala,filas,particiones,num_executors,tiempo_segundos,estado
+1x,1394094,2,2,19.1427,OK
+10x,13940940,3,3,9.3992,OK
+100x,139409400,8,4,31.1623,OK

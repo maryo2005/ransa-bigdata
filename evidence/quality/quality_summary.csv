@@ -1,0 +1,7 @@
+dataset,registros_silver,columnas,duplicados_exactos,valores_nulos,columnas_con_nulos,cantidad_flags,flags_activos
+emergencias,1362,28,0,122,1,2,122
+red_vial,34761,30,0,19350,2,3,12109
+accidentes,41833,32,3488,41171,4,4,33579
+flujo_peajes,11532,38,0,34592,3,5,6
+red_vial_geo,7058,26,0,7058,1,4,14116
+transporte_carga,1394094,33,0,821701,8,6,2215384

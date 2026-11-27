@@ -14,13 +14,12 @@ spark.sparkContext.setLogLevel("WARN")
 
 # ============================================================
 # CONFIGURACION CONGELADA DESDE VALIDATION
-# (Actualizar con los ganadores de 34_tune_decision_tree.py)
 # ============================================================
 
 MAX_DEPTH = 5
-MIN_INSTANCES_PER_NODE = 20
+MIN_INSTANCES_PER_NODE = 5
 IMPURITY = "gini"
-THRESHOLD = 0.50
+THRESHOLD = 0.60
 
 INPUT = (
     "gs://ransa-big-data-2026-lake/"
